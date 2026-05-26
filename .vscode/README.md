@@ -33,8 +33,7 @@ https://akhila-advanced-todo.netlify.app
 
 ## 📸 Screenshot
 
-(Add screenshot here later)
-
+todoscreenshot.png
 ---
 
 ## 🚀 How to Run
