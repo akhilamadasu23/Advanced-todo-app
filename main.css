@@ -1,0 +1,356 @@
+/* Google Font Reset */
+
+:root {
+	--primary: #EA40A4;
+	--business: #3a82ee;
+	--personal: #EA40A4;
+	--light: #f1f5f9;
+	--grey: #888;
+	--dark: #313154;
+	--danger: #ff5b57;
+
+	--shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+	--business-glow: 0px 0px 8px rgba(58,130,238,0.6);
+	--personal-glow: 0px 0px 8px rgba(234,64,164,0.6);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Montserrat', sans-serif;
+}
+
+body {
+	background: var(--light);
+	color: var(--dark);
+	transition: 0.3s ease;
+}
+
+/* DARK MODE */
+
+body.dark {
+	background: #111827;
+	color: white;
+}
+
+body.dark .create-todo,
+body.dark .todo-item,
+body.dark .options label,
+body.dark input,
+body.dark .top-buttons button {
+	background: #1f2937;
+	color: white;
+}
+
+body.dark h3,
+body.dark h4 {
+	color: #ddd;
+}
+
+/* MAIN APP */
+
+.app {
+	max-width: 700px;
+	margin: auto;
+	padding: 2rem 1rem;
+}
+
+/* HEADINGS */
+
+h3 {
+	font-size: 1rem;
+	font-weight: 700;
+	margin-bottom: 1rem;
+}
+
+h4 {
+	font-size: 0.9rem;
+	margin-bottom: 0.5rem;
+	color: var(--grey);
+}
+
+/* GREETING */
+
+.greeting .title {
+	display: flex;
+	align-items: center;
+	font-size: 1.8rem;
+	font-weight: 700;
+	margin-bottom: 2rem;
+}
+
+.greeting input {
+	margin-left: 0.5rem;
+	flex: 1;
+	font-size: 1.5rem;
+	font-weight: 700;
+	background: none;
+	border: none;
+	outline: none;
+}
+
+/* INPUTS */
+
+input[type="text"],
+input[type="date"] {
+	width: 100%;
+	padding: 1rem;
+	border: none;
+	outline: none;
+	border-radius: 12px;
+	background: white;
+	margin-bottom: 1rem;
+	font-size: 1rem;
+	box-shadow: var(--shadow);
+}
+
+/* CREATE TODO */
+
+.create-todo {
+	background: white;
+	padding: 1.5rem;
+	border-radius: 16px;
+	box-shadow: var(--shadow);
+}
+
+/* OPTIONS */
+
+.options {
+	display: grid;
+	grid-template-columns: repeat(2,1fr);
+	gap: 1rem;
+	margin-bottom: 1rem;
+}
+
+.options label {
+	background: white;
+	padding: 1rem;
+	border-radius: 12px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	cursor: pointer;
+	box-shadow: var(--shadow);
+	transition: 0.2s;
+}
+
+.options label:hover {
+	transform: scale(1.03);
+}
+
+/* HIDE RADIO */
+
+input[type="radio"],
+input[type="checkbox"] {
+	display: none;
+}
+
+/* BUBBLE */
+
+.bubble {
+	width: 22px;
+	height: 22px;
+	border-radius: 50%;
+	border: 2px solid var(--business);
+	box-shadow: var(--business-glow);
+	position: relative;
+}
+
+.bubble.personal {
+	border-color: var(--personal);
+	box-shadow: var(--personal-glow);
+}
+
+.bubble::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 0;
+	height: 0;
+	border-radius: 50%;
+	background: var(--business);
+	transition: 0.2s;
+}
+
+.bubble.personal::after {
+	background: var(--personal);
+}
+
+input:checked ~ .bubble::after {
+	width: 10px;
+	height: 10px;
+}
+
+/* BUTTONS */
+
+input[type="submit"],
+button {
+	padding: 0.9rem 1rem;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	font-weight: 700;
+	font-size: 1rem;
+	transition: 0.2s;
+}
+
+input[type="submit"] {
+	width: 100%;
+	background: var(--primary);
+	color: white;
+	margin-top: 1rem;
+	box-shadow: var(--personal-glow);
+}
+
+input[type="submit"]:hover,
+button:hover {
+	transform: translateY(-2px);
+	opacity: 0.9;
+}
+
+/* THEME BUTTON */
+
+#themeToggle {
+	background: #111827;
+	color: white;
+	margin-bottom: 1rem;
+	width: 100%;
+}
+
+/* SEARCH */
+
+#search {
+	margin-top: 1rem;
+}
+
+/* TOP BUTTONS */
+
+.top-buttons {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin: 1rem 0;
+}
+
+.top-buttons button {
+	background: var(--business);
+	color: white;
+	flex: 1;
+	min-width: 100px;
+}
+
+#clear-all {
+	background: var(--danger);
+}
+
+/* TODO LIST */
+
+.todo-list {
+	margin-top: 2rem;
+}
+
+.list {
+	margin-top: 1rem;
+}
+
+/* TODO ITEM */
+
+.todo-item {
+	background: white;
+	padding: 1rem;
+	border-radius: 14px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 1rem;
+	box-shadow: var(--shadow);
+	animation: fadeIn 0.3s ease;
+}
+
+.todo-item label {
+	margin-right: 1rem;
+	cursor: pointer;
+}
+
+.todo-content {
+	flex: 1;
+}
+
+.todo-content input {
+	background: none;
+	box-shadow: none;
+	margin-bottom: 0.3rem;
+	padding: 0;
+	font-size: 1rem;
+}
+
+.todo-content p {
+	font-size: 0.8rem;
+	color: var(--grey);
+}
+
+/* ACTION BUTTONS */
+
+.actions {
+	display: flex;
+	gap: 0.5rem;
+}
+
+.actions button {
+	color: white;
+	padding: 0.5rem 0.8rem;
+	font-size: 0.8rem;
+}
+
+.edit {
+	background: var(--primary);
+}
+
+.delete {
+	background: var(--danger);
+}
+
+/* DONE TASK */
+
+.todo-item.done .todo-content input {
+	text-decoration: line-through;
+	color: var(--grey);
+}
+
+/* ANIMATION */
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* MOBILE */
+
+@media(max-width: 600px){
+
+	.options {
+		grid-template-columns: 1fr;
+	}
+
+	.todo-item {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 1rem;
+	}
+
+	.actions {
+		width: 100%;
+		display: flex;
+		justify-content: flex-end;
+	}
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<title>Advanced Todo App</title>
+
+	<link rel="stylesheet" href="main.css" />
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700;900&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+	<main class="app">
+
+		<!-- Greeting -->
+		<section class="greeting">
+			<h2 class="title">
+				What's up,
+				<input type="text" id="name" placeholder="Enter your name" />
+			</h2>
+		</section>
+
+		<!-- Theme Button -->
+		<section>
+			<button id="themeToggle">🌙 Dark Mode</button>
+		</section>
+
+		<!-- Create Todo -->
+		<section class="create-todo">
+
+			<h3>CREATE A TODO</h3>
+
+			<form id="new-todo-form">
+
+				<h4>What's on your todo?</h4>
+
+				<input
+					type="text"
+					name="content"
+					id="content"
+					placeholder="e.g. Learn JavaScript"
+				/>
+
+				<!-- Due Date -->
+				<h4>Select Due Date</h4>
+
+				<input
+					type="date"
+					id="dueDate"
+					name="dueDate"
+				/>
+
+				<h4>Pick a category</h4>
+
+				<div class="options">
+
+					<label>
+						<input type="radio" name="category" value="business" />
+
+						<span class="bubble business"></span>
+
+						<div>Business</div>
+					</label>
+
+					<label>
+						<input type="radio" name="category" value="personal" />
+
+						<span class="bubble personal"></span>
+
+						<div>Personal</div>
+					</label>
+
+				</div>
+
+				<input type="submit" value="Add Todo" />
+
+			</form>
+
+		</section>
+
+		<!-- Todo List -->
+		<section class="todo-list">
+
+			<h3>TODO LIST</h3>
+
+			<!-- Search -->
+			<input
+				type="text"
+				id="search"
+				placeholder="🔍 Search Todos..."
+			/>
+
+			<!-- Task Counter -->
+			<h4 id="task-count">Total Tasks: 0</h4>
+
+			<!-- Buttons -->
+			<div class="top-buttons">
+
+				<button id="show-all">
+					All
+				</button>
+
+				<button id="show-completed">
+					Completed
+				</button>
+
+				<button id="show-pending">
+					Pending
+				</button>
+
+				<button id="clear-all">
+					Clear All
+				</button>
+
+			</div>
+
+			<!-- Todo Items -->
+			<div class="list" id="todo-list"></div>
+
+		</section>
+
+	</main>
+
+	<script src="main.js"></script>
+
+</body>
+</html>
